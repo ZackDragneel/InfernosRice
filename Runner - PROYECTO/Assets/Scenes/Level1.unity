@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.3490566, g: 0.05762726, b: 0.05762726, a: 0.79607844}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -1340,7 +1340,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.3679245, g: 0.03297436, b: 0.03297436, a: 0.5176471}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -2142,7 +2142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1237208697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2458,7 +2458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1398212401
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2567,17 +2567,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilesPrefabs1:
-  - {fileID: 1593931500874662, guid: eaae4b31d2e934641a5e842325615821, type: 2}
-  - {fileID: 1276805221096108, guid: 59b6fd47fbbca8f45b3cff8467d46fe1, type: 2}
-  - {fileID: 1215005348969092, guid: 4b5b80c615edce74babdeb594eb5c004, type: 2}
-  - {fileID: 1887775800426758, guid: b5792d356fd07414c98684a44e851a61, type: 2}
+  - {fileID: 1735096284372748, guid: 237610c74c06a34499b3efb59dd6a709, type: 2}
+  - {fileID: 1689928070496148, guid: 04735febc462e2b40bf311074031093b, type: 2}
+  - {fileID: 1074407718246042, guid: 58bc8447ed2214b4cb6c602f7e0c2059, type: 2}
+  - {fileID: 1003690579017536, guid: 54157555f7c4acc4fb9f5b474e458eb7, type: 2}
   tilesPrefabs2:
   - {fileID: 1593931500874662, guid: eaae4b31d2e934641a5e842325615821, type: 2}
   - {fileID: 1887775800426758, guid: c7165d3680cc8d0458cc24c249fa6e0b, type: 2}
   - {fileID: 1887775800426758, guid: 5b2c891838abb4a478b11894d703d894, type: 2}
   - {fileID: 1887775800426758, guid: a399b9922c6954f4594745f07930cf08, type: 2}
   - {fileID: 1887775800426758, guid: e82e135fe99f9f840b1bb4c924fd2108, type: 2}
+  tilesPrefabs3:
+  - {fileID: 0}
+  - {fileID: 0}
   uiElement: {fileID: 319975782}
+  uiElement2: {fileID: 0}
 --- !u!1 &1544887347
 GameObject:
   m_ObjectHideFlags: 0

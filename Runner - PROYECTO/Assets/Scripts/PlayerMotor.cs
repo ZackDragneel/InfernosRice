@@ -12,7 +12,7 @@ public class PlayerMotor : MonoBehaviour {
 
     //Variables de carril
     public int lane = 1;
-    public const float laneWidth = 3.0f;
+    public const float laneWidth = 2.0f;
     private bool derecha;
 
     public bool hasWon = false;

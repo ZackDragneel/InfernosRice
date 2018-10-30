@@ -14,11 +14,13 @@ using UnityEngine.UI;
 public class TileManager : MonoBehaviour {
 
 	//Arreglo que contiene los Prefabs de los tiles que vamos a utilizar. Al ser "public", podemos elejir la dimensión del arreglo desde el Inspector
-	public GameObject[]tilesPrefabs1;
+	public GameObject[] tilesPrefabs1;
     public GameObject[] tilesPrefabs2;
+    public GameObject[] tilesPrefabs3;
 
     private int levelIndex = 1;
     public CanvasGroup uiElement;
+    public CanvasGroup uiElement2;
     private bool fading = true;
 
     //Variable que utilizaremos para guardar la posición actual del Player
@@ -77,7 +79,14 @@ public class TileManager : MonoBehaviour {
             
             FadeIn();
         }
-        
+
+        if (playerPosition.transform.position.z > 1000)
+        {
+            levelIndex = 3;
+
+            FadeIn();
+        }
+
     }
     /*
      FUNCIÓN QUE UTILIZAMOS PARA GENERAR LOS TILES
@@ -110,7 +119,20 @@ public class TileManager : MonoBehaviour {
             spawnZ += tileLength;
             activeTiles.Add(going);
         }
-	}
+        else if (levelIndex == 3)
+        {
+            GameObject going;
+            if (prefabIndex == -1)
+                going = Instantiate(tilesPrefabs3[RandomPrefabIndex()]) as GameObject;
+            else
+                going = Instantiate(tilesPrefabs3[prefabIndex]) as GameObject;
+
+            going.transform.SetParent(transform);
+            going.transform.position = Vector3.forward * spawnZ;
+            spawnZ += tileLength;
+            activeTiles.Add(going);
+        }
+    }
 
     /*
      FUNCIÓN QUE UTILIZAMOS PARA RANDOMIZAR LA GENERACIÓN DE LOS TILES
@@ -142,9 +164,13 @@ public class TileManager : MonoBehaviour {
 
     public void FadeIn()
     {
-        if (fading)
+        if (fading && levelIndex == 2)
         {
             StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1, 1.0f));
+        }
+        else if (fading && levelIndex == 3)
+        {
+            StartCoroutine(FadeCanvasGroup(uiElement2, uiElement2.alpha, 1, 1.0f));
         }
         else
         {
@@ -155,9 +181,13 @@ public class TileManager : MonoBehaviour {
 
     public void FadeOut()
     {
-        if (fading)
+        if (fading && levelIndex == 2)
         {
             StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 0, 1.0f));
+        }
+        else if (fading && levelIndex == 3)
+        {
+            StartCoroutine(FadeCanvasGroup(uiElement2, uiElement2.alpha, 0, 1.0f));
         }
         else
         {

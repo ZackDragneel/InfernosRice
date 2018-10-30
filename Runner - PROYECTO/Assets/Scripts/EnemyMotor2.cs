@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMotor2 : MonoBehaviour {
 
-    private int speed = 100;
+    private int speed = 25;
     public float scorebonus = 50f;
     public Animator animator;
 
@@ -30,7 +30,7 @@ public class EnemyMotor2 : MonoBehaviour {
     void FireFuego()
     {
         Rigidbody rocketClone = (Rigidbody)Instantiate(fuego, FuegoSpawner.transform.position, FuegoSpawner.transform.rotation);
-        rocketClone.velocity = -transform.forward * speed * Time.deltaTime;
+        rocketClone.velocity = -transform.forward * speed;
         Destroy(rocketClone.gameObject, 1f);
     }
 
